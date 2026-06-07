@@ -9,6 +9,6 @@ resources:
   - deployment.yaml
   - service.yaml
 images:
-  - name: Mauriciofnti/dev-ops
-    newName: Mauriciofnti/dev-ops
+  - name: mauriciofnti/soma-api
+    newName: mauriciofnti/soma-api
     newTag: latest

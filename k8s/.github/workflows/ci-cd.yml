@@ -45,8 +45,8 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ secrets.DOCKERHUB_USERNAME }}/registro-atividades-backend:latest
-            ${{ secrets.DOCKERHUB_USERNAME }}/registro-atividades-backend:${{ steps.meta.outputs.image_tag }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/soma-api:latest
+            ${{ secrets.DOCKERHUB_USERNAME }}/soma-api:${{ steps.meta.outputs.image_tag }}
 
   update-gitops:
     needs: build-and-push
@@ -67,8 +67,8 @@ jobs:
         run: |
           cd gitops/k8s
           kustomize edit set image \
-            ${{ secrets.DOCKERHUB_USERNAME }}/registro-atividades-backend=\
-            ${{ secrets.DOCKERHUB_USERNAME }}/registro-atividades-backend:${{ needs.build-and-push.outputs.image_tag }}
+            ${{ secrets.DOCKERHUB_USERNAME }}/soma-api=\
+            ${{ secrets.DOCKERHUB_USERNAME }}/soma-api:${{ needs.build-and-push.outputs.image_tag }}
 
       - name: Commit and push
         run: |
