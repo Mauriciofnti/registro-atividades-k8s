@@ -10,4 +10,4 @@ resources:
 - api-service.yaml
 images:
 - name: mauriciofnti/soma-api
-  newTag: c520f6b9a81a37d5b23df0c439a316e67ac6ba84
+  newTag: f610b4adfe0db557626b6ae1ffe40e7ecd1bcd88
